@@ -23,16 +23,22 @@ Xinkai Zheng
 4. Arrancar en modo desarrollo: `npm run dev`
 5. Abrir `http://localhost:5173` en el navegador
 
+Para que funcionen el login y el registro, el backend tiene que estar arrancado en `http://localhost:3000` (con MongoDB encendido). La dirección de la API está en `src/api.js`.
+
 ## Páginas
 
 | Ruta | Archivo | Qué hace |
 |---|---|---|
-| `/` | `src/pages/Home.jsx` | Portada con los productos destacados |
-| `/login` | `src/pages/Login.jsx` | Formulario de inicio de sesión (todavía no conectado a la API) |
-| `/register` | `src/pages/Register.jsx` | Formulario de registro (todavía no conectado a la API) |
+| `/` | `src/pages/Home.jsx` | Portada, ventajas, categorías y productos destacados |
+| `/login` | `src/pages/Login.jsx` | Inicio de sesión con `POST /api/users/login` |
+| `/register` | `src/pages/Register.jsx` | Registro con `POST /api/users/register` |
+
+Después del login o del registro, los tokens (`accessToken`, `refreshToken`) y el usuario se guardan en el `localStorage` del navegador, y el menú enseña el nombre y el botón **Sortir** (cerrar sesión).
 
 ## Estructura
 
 - `src/main.jsx`: punto de entrada y rutas (React Router)
-- `src/App.jsx`: plantilla común (menú, `<Outlet />` y pie)
+- `src/App.jsx`: plantilla común (menú con el usuario, `<Outlet />` y pie)
 - `src/pages/`: una página por archivo
+- `src/api.js`: la dirección de la API
+- `src/index.css`: nuestros estilos (colores de Valorant), encima de Bootstrap

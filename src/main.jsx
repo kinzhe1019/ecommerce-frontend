@@ -5,6 +5,8 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 // CSS de Bootstrap: estilos ya hechos (menú, tarjetas, botones, formularios...)
 import 'bootstrap/dist/css/bootstrap.min.css'
+// Nuestros estilos (colores de Valorant). Van después para poder cambiar los de Bootstrap
+import './index.css'
 // App = la plantilla común (menú + pie). Las otras son las páginas
 import App from './App.jsx'
 import Home from './pages/Home.jsx'
